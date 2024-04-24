@@ -50,7 +50,6 @@ struct SettingsView: View {
                 }, label: {
                     Text("Save")
                 })
-                .tint(.primary)
             })
         }
     }
