@@ -11,6 +11,9 @@
 		52D72E2C2BD8DBFF00D3EB88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72E2B2BD8DBFF00D3EB88 /* ContentView.swift */; };
 		52D72E2E2BD8DC0000D3EB88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D72E2D2BD8DC0000D3EB88 /* Assets.xcassets */; };
 		52D72E312BD8DC0000D3EB88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D72E302BD8DC0000D3EB88 /* Preview Assets.xcassets */; };
+		52D72E3C2BD8DC5600D3EB88 /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72E3B2BD8DC5600D3EB88 /* Topics.swift */; };
+		52D72E3E2BD8DCE800D3EB88 /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72E3D2BD8DCE800D3EB88 /* StoriesView.swift */; };
+		52D72E402BD8DCF500D3EB88 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72E3F2BD8DCF500D3EB88 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		52D72E2B2BD8DBFF00D3EB88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		52D72E2D2BD8DC0000D3EB88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52D72E302BD8DC0000D3EB88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		52D72E3B2BD8DC5600D3EB88 /* Topics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topics.swift; sourceTree = "<group>"; };
+		52D72E3D2BD8DCE800D3EB88 /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
+		52D72E3F2BD8DCF500D3EB88 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +57,10 @@
 		52D72E282BD8DBFF00D3EB88 /* VoiceAI */ = {
 			isa = PBXGroup;
 			children = (
-				52D72E292BD8DBFF00D3EB88 /* VoiceAIApp.swift */,
-				52D72E2B2BD8DBFF00D3EB88 /* ContentView.swift */,
-				52D72E2D2BD8DC0000D3EB88 /* Assets.xcassets */,
+				52D72E3A2BD8DC3E00D3EB88 /* Model */,
+				52D72E382BD8DC1200D3EB88 /* App */,
+				52D72E372BD8DC0A00D3EB88 /* View */,
+				52D72E392BD8DC1900D3EB88 /* Resources */,
 				52D72E2F2BD8DC0000D3EB88 /* Preview Content */,
 			);
 			path = VoiceAI;
@@ -65,6 +72,40 @@
 				52D72E302BD8DC0000D3EB88 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		52D72E372BD8DC0A00D3EB88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				52D72E2B2BD8DBFF00D3EB88 /* ContentView.swift */,
+				52D72E3D2BD8DCE800D3EB88 /* StoriesView.swift */,
+				52D72E3F2BD8DCF500D3EB88 /* SettingsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		52D72E382BD8DC1200D3EB88 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				52D72E292BD8DBFF00D3EB88 /* VoiceAIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		52D72E392BD8DC1900D3EB88 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52D72E2D2BD8DC0000D3EB88 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		52D72E3A2BD8DC3E00D3EB88 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				52D72E3B2BD8DC5600D3EB88 /* Topics.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D72E402BD8DCF500D3EB88 /* SettingsView.swift in Sources */,
+				52D72E3E2BD8DCE800D3EB88 /* StoriesView.swift in Sources */,
 				52D72E2C2BD8DBFF00D3EB88 /* ContentView.swift in Sources */,
 				52D72E2A2BD8DBFF00D3EB88 /* VoiceAIApp.swift in Sources */,
+				52D72E3C2BD8DC5600D3EB88 /* Topics.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
