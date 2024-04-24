@@ -14,6 +14,7 @@
 		52D72E3C2BD8DC5600D3EB88 /* Topics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72E3B2BD8DC5600D3EB88 /* Topics.swift */; };
 		52D72E3E2BD8DCE800D3EB88 /* StoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72E3D2BD8DCE800D3EB88 /* StoriesView.swift */; };
 		52D72E402BD8DCF500D3EB88 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72E3F2BD8DCF500D3EB88 /* SettingsView.swift */; };
+		52D72E432BD8F53200D3EB88 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72E422BD8F53200D3EB88 /* Constant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		52D72E3B2BD8DC5600D3EB88 /* Topics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topics.swift; sourceTree = "<group>"; };
 		52D72E3D2BD8DCE800D3EB88 /* StoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesView.swift; sourceTree = "<group>"; };
 		52D72E3F2BD8DCF500D3EB88 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		52D72E422BD8F53200D3EB88 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		52D72E282BD8DBFF00D3EB88 /* VoiceAI */ = {
 			isa = PBXGroup;
 			children = (
+				52D72E412BD8F51D00D3EB88 /* Services */,
 				52D72E3A2BD8DC3E00D3EB88 /* Model */,
 				52D72E382BD8DC1200D3EB88 /* App */,
 				52D72E372BD8DC0A00D3EB88 /* View */,
@@ -106,6 +109,14 @@
 				52D72E3B2BD8DC5600D3EB88 /* Topics.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		52D72E412BD8F51D00D3EB88 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				52D72E422BD8F53200D3EB88 /* Constant.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				52D72E2C2BD8DBFF00D3EB88 /* ContentView.swift in Sources */,
 				52D72E2A2BD8DBFF00D3EB88 /* VoiceAIApp.swift in Sources */,
 				52D72E3C2BD8DC5600D3EB88 /* Topics.swift in Sources */,
+				52D72E432BD8F53200D3EB88 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
