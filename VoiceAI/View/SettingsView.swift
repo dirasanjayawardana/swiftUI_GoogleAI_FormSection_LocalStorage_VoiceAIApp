@@ -22,8 +22,14 @@ struct SettingsView: View {
                 Section(content: {
                     TextField("Gemini AI Key", text: $geminiAIKey)
                         .padding(.vertical, 8)
+                        .onAppear{
+                            geminiAIKey = UserDefaults.standard.string(forKey: "GeminiAIKey") ?? ""
+                        }
                     TextField("ElevenLabs Key", text: $elevenLabsKey)
                         .padding(.vertical, 8)
+                        .onAppear{
+                            elevenLabsKey = UserDefaults.standard.string(forKey: "ElevenLabsAPIKey") ?? ""
+                        }
                 }, header: {
                     Text("API KEYS")
                 }, footer: {
@@ -46,10 +52,12 @@ struct SettingsView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(content: {
                 Button(action: {
-                    
+                    handleSaveKey()
                 }, label: {
                     Text("Save")
                 })
+                .padding(.trailing, 8)
+                .disabled(geminiAIKey.isEmpty || elevenLabsKey.isEmpty)
             })
         }
     }
@@ -57,4 +65,11 @@ struct SettingsView: View {
 
 #Preview {
     SettingsView()
+}
+
+extension SettingsView {
+    func handleSaveKey() {
+        UserDefaults.standard.set(geminiAIKey, forKey: "GeminiAIKey")
+        UserDefaults.standard.set(elevenLabsKey, forKey: "ElevenLabsAPIKey")
+    }
 }
