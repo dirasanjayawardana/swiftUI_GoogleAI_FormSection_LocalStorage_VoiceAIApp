@@ -10,6 +10,7 @@
 		52116CF32BD9FCB600C0E70F /* StoryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52116CF22BD9FCB600C0E70F /* StoryVM.swift */; };
 		52116CF62BD9FD2300C0E70F /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 52116CF52BD9FD2300C0E70F /* GoogleGenerativeAI */; };
 		52116CF82BDA365500C0E70F /* ElevenLabsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52116CF72BDA365500C0E70F /* ElevenLabsService.swift */; };
+		52116CFA2BDA3CB400C0E70F /* SpeechVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52116CF92BDA3CB400C0E70F /* SpeechVM.swift */; };
 		52D72E2A2BD8DBFF00D3EB88 /* VoiceAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72E292BD8DBFF00D3EB88 /* VoiceAIApp.swift */; };
 		52D72E2C2BD8DBFF00D3EB88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D72E2B2BD8DBFF00D3EB88 /* ContentView.swift */; };
 		52D72E2E2BD8DC0000D3EB88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D72E2D2BD8DC0000D3EB88 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		52116CF22BD9FCB600C0E70F /* StoryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryVM.swift; sourceTree = "<group>"; };
 		52116CF72BDA365500C0E70F /* ElevenLabsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElevenLabsService.swift; sourceTree = "<group>"; };
+		52116CF92BDA3CB400C0E70F /* SpeechVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechVM.swift; sourceTree = "<group>"; };
 		52D72E262BD8DBFF00D3EB88 /* VoiceAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D72E292BD8DBFF00D3EB88 /* VoiceAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceAIApp.swift; sourceTree = "<group>"; };
 		52D72E2B2BD8DBFF00D3EB88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -50,6 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				52116CF22BD9FCB600C0E70F /* StoryVM.swift */,
+				52116CF92BDA3CB400C0E70F /* SpeechVM.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D72E402BD8DCF500D3EB88 /* SettingsView.swift in Sources */,
+				52116CFA2BDA3CB400C0E70F /* SpeechVM.swift in Sources */,
 				52116CF32BD9FCB600C0E70F /* StoryVM.swift in Sources */,
 				52D72E3E2BD8DCE800D3EB88 /* StoriesView.swift in Sources */,
 				52D72E2C2BD8DBFF00D3EB88 /* ContentView.swift in Sources */,

@@ -69,7 +69,6 @@ class StoryVM: ObservableObject {
     
     func showAnimateTypeWriter2() {
         animatedStoryText = ""
-        var charIndex = 0
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { [weak self] _ in
