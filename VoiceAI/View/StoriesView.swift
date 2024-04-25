@@ -11,7 +11,8 @@ struct StoriesView: View {
     
     @State private var selectedTopic: Topics = .persahabatan
     @State private var selectedMood: Mood = .bahagia
-    @State private var todayStory: String = ""
+    
+    @StateObject private var storyVM = StoryVM()
     
     var body: some View {
         NavigationStack {
@@ -20,7 +21,7 @@ struct StoriesView: View {
                 Section {
                     Picker(selection: $selectedTopic, content: {
                         ForEach(Topics.allCases, id:\.self) { topic in
-                            Text(topic.rawValue.capitalized)
+                            Text(topic.rawValue)
                                 .font(.subheadline)
                                 .fontWeight(.bold)
                                 .tag(topic)
@@ -34,7 +35,7 @@ struct StoriesView: View {
                     
                     Picker(selection: $selectedMood, content: {
                         ForEach(Mood.allCases, id: \.self) { mood in
-                            Text(mood.rawValue.capitalized)
+                            Text(mood.rawValue)
                                 .font(.subheadline)
                                 .fontWeight(.bold)
                                 .tag(mood)
@@ -54,10 +55,13 @@ struct StoriesView: View {
                 
                 // text editor
                 Section(content: {
-                    TextEditor(text: $todayStory)
+                    TextEditor(text: $storyVM.storyText)
                         .frame(height: 200)
                         .font(.system(.headline, design: .rounded))
                         .foregroundStyle(.blue)
+                        .overlay(content: {
+                            storyVM.isLoading ? ProgressView() : nil
+                        })
                 }, header: {
                     Text("Todays Story")
                 }, footer: {
@@ -67,12 +71,18 @@ struct StoriesView: View {
                 
                 // button generate
                 Button(action: {
-                    
+                    Task {
+                        await handleGenerateStory()
+                    }
                 }, label: {
-                    Text("GENERATE")
-                        .font(.system(.callout, design: .rounded))
-                        .fontWeight(.bold)
-                        .tint(.primary)
+                    if storyVM.isLoading {
+                        ProgressView().scaleEffect(1)
+                    } else {
+                        Text(storyVM.storyText.isEmpty ? "Generate".uppercased() : "Speech".uppercased())
+                            .font(.system(.callout, design: .rounded))
+                            .fontWeight(.bold)
+                            .tint(.primary)
+                    }
                 })
                 .buttonStyle(.plain)
                 .frame(minWidth: 0, maxWidth: .infinity)
@@ -85,4 +95,10 @@ struct StoriesView: View {
 
 #Preview {
     StoriesView()
+}
+
+extension StoriesView {
+    func handleGenerateStory() async {
+        await storyVM.generateStory(topic: selectedTopic, mood: selectedMood)
+    }
 }
