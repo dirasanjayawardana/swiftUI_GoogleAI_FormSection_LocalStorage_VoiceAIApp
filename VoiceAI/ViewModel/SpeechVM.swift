@@ -8,6 +8,7 @@
 import Foundation
 import AVFoundation
 
+@MainActor
 class SpeechVM: NSObject, ObservableObject, AVAudioPlayerDelegate {
     @Published var isLoading = false
     @Published var isPlaying = false

@@ -2,7 +2,7 @@
 //  ElevenLabsService.swift
 //  VoiceAI
 //
-//  Created by MACBOOK PRO on 25/04/24.
+//  Created by Dir PRO on 25/04/24.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ class ElevenLabsService {
     }
     
     func generateSpeech(for text: String) async throws -> Data {
-        guard let url = URL(string: Constant.fullUrl(forVoice: .johnDoe)) else {
+        guard let url = URL(string: Constant.fullUrl(forVoice: .bambang)) else {
             print("Invalid URL")
             return Data()
         }
@@ -23,20 +23,21 @@ class ElevenLabsService {
         
         // request body
         let body: [String: Any] = [
-            "model_id": "eleven_multilingual_2",
+            "model_id": "eleven_multilingual_v2",
             "text": text,
-            "voice_text": [
-                "stability": 0.5,
-                "similarity_boost": 0.8
+            "voice_settings": [
+                "stability": 1,
+                "similarity_boost": 1
             ]
         ]
         
-        let requestBody = try JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
-        
+        let requestBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed)
+
         // post data
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue(apiKey, forHTTPHeaderField: "xi-aoi-key")
+        request.setValue(apiKey, forHTTPHeaderField: "xi-api-key")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = requestBody
         
         // Network request for POST Data

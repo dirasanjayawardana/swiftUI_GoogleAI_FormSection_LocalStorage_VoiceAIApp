@@ -13,6 +13,7 @@ struct StoriesView: View {
     @State private var selectedMood: Mood = .bahagia
     
     @StateObject private var storyVM = StoryVM()
+    @StateObject private var speechVM = SpeechVM()
     
     var body: some View {
         NavigationStack {
@@ -71,11 +72,9 @@ struct StoriesView: View {
                 
                 // button generate
                 Button(action: {
-                    Task {
-                        await handleGenerateStory()
-                    }
+                    todaysStory()
                 }, label: {
-                    if storyVM.isLoading {
+                    if storyVM.isLoading || speechVM.isLoading {
                         ProgressView().scaleEffect(1)
                     } else {
                         Text(storyVM.storyText.isEmpty ? "Generate".uppercased() : "Speech".uppercased())
@@ -98,7 +97,24 @@ struct StoriesView: View {
 }
 
 extension StoriesView {
-    func handleGenerateStory() async {
-        await storyVM.generateStory(topic: selectedTopic, mood: selectedMood)
+    func handleGenerateStory() {
+        Task {
+            await storyVM.generateStory(topic: selectedTopic, mood: selectedMood)
+        }
+    }
+    
+    func handlePlaySpeech() {
+        let apiKey = UserDefaults.standard.string(forKey: "ElevenLabsAPIKey") ?? ""
+        Task {
+            await speechVM.generateAndPlaySpeech(from: storyVM.animatedStoryText, apiKey: apiKey)
+        }
+    }
+    
+    private func todaysStory() {
+        if storyVM.animatedStoryText.isEmpty{
+            handleGenerateStory()
+        } else {
+            handlePlaySpeech()
+        }
     }
 }
